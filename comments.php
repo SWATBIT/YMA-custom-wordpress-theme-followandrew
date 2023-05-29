@@ -11,7 +11,7 @@
                                     if(!have_comments()){
                                         echo "Leave a Comment";
                                     }else{
-                                        echo get_comments_count(). "Comments";
+                                        echo get_comments_number(). "Comments";
                                     }
                                 ?>
 
@@ -39,10 +39,12 @@
 					
                     <?php 
 
-                                if(comments_open()){
+                                if(comments_open()){//if we are allowing comments to be displayed
                                     comment_form(
                                         array(
-                                            'class_form' => ''
+                                            'class_form' => '',
+                                            'title-reply-before' => '<h2 id="reply-title" class="comment-reply-title">',
+                                            'title-reply-after' => '</h2>'
                                         )
                                     );
                                 }
